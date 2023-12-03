@@ -1,0 +1,1527 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/20/2023 9:09:24 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="88F97473446A0D4"
+  DTS:CreatorName="88F97473446A0D4\Coca"
+  DTS:DTSID="{FC90446C-4212-475C-87BA-6D309A2D12CA}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="1-source to stagging"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{449AD64F-55C4-40BA-813D-22D79B5F771A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[88F97473446A0D4\DATASERVER22710.pet]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6DF46E6F-689B-45C3-AA29-5EAC787B90DB}"
+      DTS:ObjectName="88F97473446A0D4\DATASERVER22710.pet">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=88F97473446A0D4\DATASERVER22710;Initial Catalog=pet;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{71E079EA-D5B9-49F3-AF1C-ADBAC37C5961}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Coca\Downloads\PetFinder.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PetID"
+              DTS:DTSID="{62F97117-5D31-4FB2-857D-DC2A57BECA2B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Type"
+              DTS:DTSID="{3D8E2E21-F26F-4366-AE8A-44B7AC3F47E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age"
+              DTS:DTSID="{7B0C0D96-7147-4859-A24F-FDF7AA102F29}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Breed1"
+              DTS:DTSID="{A16F8CE6-A6F8-4951-B019-4EE7622C5785}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Breed2"
+              DTS:DTSID="{ADBF94DE-6EBB-4E8E-995E-5862761365A9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{F9779B5D-D467-49CB-8D18-C845A3C6713A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Color1"
+              DTS:DTSID="{A360E7FB-A68B-4AEF-89CB-97176249C018}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Color2"
+              DTS:DTSID="{EB72FC8C-3C57-4554-8476-1C9443343D9E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Color3"
+              DTS:DTSID="{00DAECE2-CE0E-4B91-89FA-F3A79A91C68F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MaturitySize"
+              DTS:DTSID="{22CC51D4-8476-4606-8522-750EFD5B8DDC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FurLength"
+              DTS:DTSID="{DF7F596E-BAB7-4004-8E5E-80F222646321}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vaccinated"
+              DTS:DTSID="{8D43B265-7873-4501-A6E9-4BBA02E1DBBD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dewormed"
+              DTS:DTSID="{8B97713E-C2CA-41B2-A7A7-A673E5808B18}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sterilized"
+              DTS:DTSID="{EA7498B1-3CD0-41DD-9B63-3E817F5E65E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Health"
+              DTS:DTSID="{97676F5F-FA18-4096-963D-BAE3F6DF9520}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quantity"
+              DTS:DTSID="{8DEF9F31-5DAA-43D1-A2A5-87576616F2B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fee"
+              DTS:DTSID="{DC3EBE61-CCF6-4FB5-84BC-08E1C86644A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{92DB6A6D-A9D8-4702-9958-7D796CA5B227}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RescuerID"
+              DTS:DTSID="{B7916B65-16D1-4C22-B730-13FEC4F237BF}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Source to Stagging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C0ADCCD3-BE94-4970-87CC-4EC378B92565}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Source to Stagging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Source to Stagging\Load data into Stagging table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load data into Stagging table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Source_Data_Stagging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Source to Stagging\Load data into Stagging table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[88F97473446A0D4\DATASERVER22710.pet]"
+                  connectionManagerRefId="Package.ConnectionManagers[88F97473446A0D4\DATASERVER22710.pet]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[PetID]"
+                      cachedDataType="i4"
+                      cachedName="PetID"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[PetID]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[PetID]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Type"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Type]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[Age]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Age"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[Breed1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Breed1"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Breed1]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Breed1]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[Breed2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Breed2"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Breed2]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Breed2]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[Color1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Color1"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Color1]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Color1]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[Color2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Color2"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Color2]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Color2]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[Color3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Color3"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Color3]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Color3]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[MaturitySize]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MaturitySize"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[MaturitySize]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[MaturitySize]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[FurLength]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FurLength"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[FurLength]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[FurLength]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[Vaccinated]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Vaccinated"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Vaccinated]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Vaccinated]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[Dewormed]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Dewormed"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Dewormed]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Dewormed]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[Sterilized]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sterilized"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Sterilized]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Sterilized]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[Health]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Health"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Health]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Health]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[Quantity]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Quantity"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[Fee]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Fee"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Fee]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Fee]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[State]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="State"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[State]" />
+                    <inputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].Columns[RescuerID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RescuerID"
+                      externalMetadataColumnId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[RescuerID]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[RescuerID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[PetID]"
+                      dataType="i4"
+                      name="PetID" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Pet_Type_ID]"
+                      dataType="i4"
+                      name="Pet_Type_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Pet_Breed1_ID]"
+                      dataType="i4"
+                      name="Pet_Breed1_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Breed1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Breed1" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Pet_Breed2_ID]"
+                      dataType="i4"
+                      name="Pet_Breed2_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Breed2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Breed2" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Pet_Gender_ID]"
+                      dataType="i4"
+                      name="Pet_Gender_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Pet_Color1_ID]"
+                      dataType="i4"
+                      name="Pet_Color1_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Color1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Color1" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Pet_Color2_ID]"
+                      dataType="i4"
+                      name="Pet_Color2_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Color2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Color2" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Pet_Color3_ID]"
+                      dataType="i4"
+                      name="Pet_Color3_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Color3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Color3" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Pet_MaturitySize_ID]"
+                      dataType="i4"
+                      name="Pet_MaturitySize_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[MaturitySize]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      name="MaturitySize" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Pet_FurLength_ID]"
+                      dataType="i4"
+                      name="Pet_FurLength_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[FurLength]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      name="FurLength" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Pet_Vaccinated_ID]"
+                      dataType="i4"
+                      name="Pet_Vaccinated_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Vaccinated]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Vaccinated" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Pet_Dewormed_ID]"
+                      dataType="i4"
+                      name="Pet_Dewormed_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Dewormed]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Dewormed" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Pet_Sterilized_ID]"
+                      dataType="i4"
+                      name="Pet_Sterilized_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Sterilized]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Sterilized" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Pet_Health_ID]"
+                      dataType="i4"
+                      name="Pet_Health_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Health]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="Health" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[Fee]"
+                      dataType="i4"
+                      name="Fee" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[State_ID]"
+                      dataType="i4"
+                      name="State_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input].ExternalColumns[RescuerID]"
+                      dataType="i4"
+                      name="RescuerID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Source to Stagging\Load data into Stagging table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Source to Stagging\Load data into Stagging table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Source to Stagging\Load data into Stagging table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Source to Stagging\Load data into Stagging table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Source to Stagging\Lookup PetID"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup PetID"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select PetID from Source_Data_Stagging</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select PetID from Source_Data_Stagging) [refTable]
+where [refTable].[PetID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PetID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[PetID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Source to Stagging\Lookup PetID.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[88F97473446A0D4\DATASERVER22710.pet]"
+                  connectionManagerRefId="Package.ConnectionManagers[88F97473446A0D4\DATASERVER22710.pet]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Source to Stagging\Lookup PetID.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Source to Stagging\Lookup PetID.Inputs[Lookup Input].Columns[PetID]"
+                      cachedDataType="i4"
+                      cachedName="PetID"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[PetID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">PetID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Source to Stagging\Lookup PetID.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Source to Stagging\Lookup PetID.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Source to Stagging\Lookup PetID.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Source to Stagging\Lookup PetID.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Source to Stagging\Lookup PetID.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Source to Stagging\Lookup PetID.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Source to Stagging\Lookup PetID.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Source to Stagging\Lookup PetID.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Source to Stagging\Lookup PetID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Source to Stagging\Lookup PetID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Source to Stagging\PetFinder csv FileSource"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="PetFinder csv FileSource"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Source to Stagging\PetFinder csv FileSource.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[PetID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[PetID]"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[PetID]"
+                      name="PetID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Type]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Type]"
+                      name="Type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Age]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Breed1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Breed1]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Breed1]"
+                      name="Breed1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Breed2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Breed2]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Breed2]"
+                      name="Breed2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Color1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Color1]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Color1]"
+                      name="Color1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Color2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Color2]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Color2]"
+                      name="Color2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Color3]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Color3]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Color3]"
+                      name="Color3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[MaturitySize]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[MaturitySize]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[MaturitySize]"
+                      name="MaturitySize"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[FurLength]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[FurLength]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[FurLength]"
+                      name="FurLength"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Vaccinated]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Vaccinated]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Vaccinated]"
+                      name="Vaccinated"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Dewormed]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Dewormed]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Dewormed]"
+                      name="Dewormed"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Sterilized]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Sterilized]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Sterilized]"
+                      name="Sterilized"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Health]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Health]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Health]"
+                      name="Health"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Quantity]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Quantity]"
+                      name="Quantity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Fee]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Fee]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[Fee]"
+                      name="Fee"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[State]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[RescuerID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[RescuerID]"
+                      length="50"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].Columns[RescuerID]"
+                      name="RescuerID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[PetID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PetID" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Breed1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Breed1" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Breed2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Breed2" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Color1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Color1" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Color2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Color2" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Color3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Color3" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[MaturitySize]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MaturitySize" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[FurLength]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FurLength" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Vaccinated]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vaccinated" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Dewormed]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Dewormed" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Sterilized]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sterilized" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Health]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Health" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[Fee]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Fee" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output].ExternalColumns[RescuerID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RescuerID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Source to Stagging.Paths[Flat File Source Output]"
+              endId="Package\Source to Stagging\Lookup PetID.Inputs[Lookup Input]"
+              name="Flat File Source Output"
+              startId="Package\Source to Stagging\PetFinder csv FileSource.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Source to Stagging.Paths[Lookup No Match Output]"
+              endId="Package\Source to Stagging\Load data into Stagging table.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Source to Stagging\Lookup PetID.Outputs[Lookup No Match Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Source to Stagging"
+          TopLeft="465,248" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Source to Stagging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="222,42"
+          Id="Package\Source to Stagging\Load data into Stagging table"
+          TopLeft="378,444" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Source to Stagging\PetFinder csv FileSource"
+          TopLeft="386,204" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Source to Stagging\Lookup PetID"
+          TopLeft="414,329" />
+        <EdgeLayout
+          Id="Package\Source to Stagging.Paths[Lookup No Match Output]"
+          TopLeft="488,371">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73"
+              Start="0,0"
+              End="0,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,26.9453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Source to Stagging.Paths[Flat File Source Output]"
+          TopLeft="487,246">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83"
+              Start="0,0"
+              End="0,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source to Stagging\Load data into Stagging table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source to Stagging\Lookup PetID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
